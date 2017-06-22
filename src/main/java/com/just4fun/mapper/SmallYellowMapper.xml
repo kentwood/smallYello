@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper    
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"    
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.just4fun.mapper.SmallYellowMapper">
+	<!-- 根据用户ID查询用户信息 -->
+	<select id="findSmallYellowByNum" parameterType="java.lang.String" resultType="com.just4fun.entity.SmallYellow">
+		SELECT * FROM smallyellow WHERE numString =#{numString}
+	</select>
+
+	<insert id="insertIntoSmallYellow" parameterType="com.just4fun.entity.SmallYellow">
+		INSERT INTO smallyellow(numString,codeString) VALUES (${numString},${codeString});
+	</insert>
+
+	<update id="updateSmallYellowByNum" parameterType="com.just4fun.entity.SmallYellow">
+		UPDATE smallyellow SET codeString='${codeString}' WHERE numString='${numString}'
+	</update>
+
+	<delete id="deleteSmallYellowByNum" parameterType="java.lang.String">
+		DELETE FROM smallyellow WHERE numString=#{numString}
+	</delete>
+</mapper>
+
